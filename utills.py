@@ -23,7 +23,7 @@ def pad_all(dict, maxlen):
     x_2 = pad_sequences(x_2, maxlen=maxlen, padding='post', truncating='post', value=0)
     x_3 = pad_sequences(x_3, maxlen=maxlen, padding='post', truncating='post', value=0)
 
-    return np.array([[x_1, x_2, x_3], dict['labels']])
+    return np.array([[x_1, x_2, x_3], np.array(dict['labels'])])
 
 
 def load_cui_dataset(path, maxlen):
